@@ -1,0 +1,49 @@
+
+CREATE TABLE Suppliers (
+SupplierID INT AUTO_INCREMENT PRIMARY KEY,
+SupplierName VARCHAR(255) NOT NULL,
+ContactName VARCHAR(255),
+Address VARCHAR(255),
+City VARCHAR(100),
+PostalCode VARCHAR(20),
+Country VARCHAR(100),
+Phone VARCHAR(20)
+);
+CREATE TABLE Products (
+ProductID INT AUTO_INCREMENT PRIMARY KEY,
+ProductName VARCHAR(255) NOT NULL,
+SupplierID INT,
+Category VARCHAR(100),
+UnitPrice DECIMAL(10, 2),
+UnitsInStock INT,
+FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
+);
+CREATE TABLE Customers (
+CustomerID INT AUTO_INCREMENT PRIMARY KEY,
+CustomerName VARCHAR(255) NOT NULL,
+ContactName VARCHAR(255),
+Address VARCHAR(255),
+City VARCHAR(100),
+PostalCode VARCHAR(20),
+Country VARCHAR(100)
+);
+CREATE TABLE Orders (
+OrderID INT AUTO_INCREMENT PRIMARY KEY,
+CustomerID INT,
+OrderDate DATE,
+ShipDate DATE,
+ShipAddress VARCHAR(255),
+ShipCity VARCHAR(100),
+ShipPostalCode VARCHAR(20),
+ShipCountry VARCHAR(100),
+FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+CREATE TABLE OrderDetails (
+OrderDetailID INT AUTO_INCREMENT PRIMARY KEY,
+OrderID INT,
+ProductID INT,
+Quantity INT,
+UnitPrice DECIMAL(10, 2),
+FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
