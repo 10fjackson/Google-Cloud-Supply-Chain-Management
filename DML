@@ -1,0 +1,97 @@
+-- Inserting data into Suppliers
+INSERT INTO Suppliers (SupplierName, ContactName, Address, City, PostalCode,
+Country, Phone) VALUES
+('EcoFriendly Ltd', 'John Doe', '123 Green Road', 'EcoCity', 'EC123', 'Ecoland',
+'123-456-7890'),
+('NatureGoods Inc', 'Jane Smith', '456 Natural Way', 'GreenVille', 'GV456',
+'Greenland', '987-654-3210');
+-- Inserting data into Products
+INSERT INTO Products (ProductName, SupplierID, Category, UnitPrice, UnitsInStock)
+VALUES
+('Bamboo Toothbrush', 1, 'Personal Care', 2.99, 100),
+('Reusable Water Bottle', 1, 'Outdoor', 10.50, 200),
+('Organic Cotton T-shirt', 2, 'Clothing', 15.99, 150);
+-- Inserting data into Customers
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode,
+Country) VALUES
+('Eco Shopper', 'Alice Johnson', '789 Eco Ave', 'EcoTown', 'ET789', 'EcoCountry'),
+('Green Buyer', 'Bob Brown', '321 Green St', 'EcoVille', 'EV321', 'EcoLand');
+-- Inserting data into Orders
+INSERT INTO Orders (CustomerID, OrderDate, ShipDate, ShipAddress, ShipCity,
+ShipPostalCode, ShipCountry) VALUES
+(1, '2023-11-01', '2023-11-05', '789 Eco Ave', 'EcoTown', 'ET789', 'EcoCountry'),
+(2, '2023-11-03', '2023-11-08', '321 Green St', 'EcoVille', 'EV321', 'EcoLand');
+-- Inserting data into OrderDetails
+INSERT INTO OrderDetails (OrderID, ProductID, Quantity, UnitPrice) VALUES
+(1, 1, 2, 2.99),
+(1, 3, 1, 15.99),
+(2, 2, 1, 10.50);
+
+
+
+
+-- NEW DATA
+INSERT INTO Suppliers (SupplierName, ContactName, Address, City, PostalCode, Country, Phone) VALUES
+('Green Earth Co', 'Emma Wilson', '789 Leaf Lane', 'Forest City', 'FC789', 'Woodland', '555-123-4567'),
+('Eco Innovations', 'Liam Johnson', '101 Sun Street', 'SolarTown', 'ST101', 'Sunland', '555-987-6543'),
+('Pure Water Ltd', 'Olivia Martin', '202 River Road', 'AquaCity', 'AC202', 'Oceanland', '555-234-5678'),
+('Organic Foods Corp', 'Noah Davis', '303 Organic Blvd', 'FarmVille', 'FV303', 'Agriland', '555-345-6789'),
+('Eco Wearables Inc', 'Isabella Brown', '404 Fashion Ave', 'Style City', 'SC404', 'Fabricland', '555-456-7890'),
+('Renewable Energy Systems', 'Jacob White', '505 Power Path', 'EnergyTown', 'ET505', 'Voltland', '555-567-8901'),
+('Sustainable Living Goods', 'Sophia Harris', '606 Green Circle', 'EcoPlace', 'EP606', 'Sustainland', '555-678-9012'),
+('EcoTech Solutions', 'Mason Clark', '707 Tech Trail', 'InnovaCity', 'IT707', 'Futureland', '555-789-0123'),
+('GreenPackaging Co', 'Mia Young', '808 Box Street', 'PackageTown', 'PT808', 'Wrapland', '555-890-1234'),
+('BioBeauty Products', 'James Thompson', '909 Beauty Blvd', 'CosmoCity', 'CC909', 'Skinland', '555-901-2345');
+
+INSERT INTO Products (ProductName, SupplierID, Category, UnitPrice, UnitsInStock) VALUES
+('Eco-friendly Sunscreen', 3, 'Personal Care', 12.99, 120),
+('Biodegradable Soap', 3, 'Personal Care', 3.50, 150),
+('Solar Powered Lamp', 6, 'Electronics', 25.99, 80),
+('Recycled Paper Notebook', 9, 'Stationery', 4.99, 200),
+('Organic Coffee Beans', 4, 'Food', 9.99, 100),
+('Bamboo Sunglasses', 5, 'Accessories', 19.99, 90),
+('Reusable Metal Straw', 1, 'Kitchen', 1.99, 300),
+('Eco Yoga Mat', 2, 'Sports', 29.99, 60),
+('Recycled Plastic Raincoat', 10, 'Clothing', 24.99, 70),
+('Organic Vegan Lip Balm', 10, 'Personal Care', 6.99, 160);
+
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country) VALUES
+('The Green Gardener', 'Clara Rodriguez', '123 Plant Road', 'FloraCity', 'FC123', 'Plantland'),
+('Eco Explorer', 'David Lee', '234 Adventure Ave', 'TravelTown', 'TT234', 'Wanderland'),
+('Health Nut', 'Ella Garcia', '345 Wellness Way', 'HealthCity', 'HC345', 'Fitland'),
+('Nature Photographer', 'Ethan Martinez', '456 Scenic St', 'ViewVille', 'VV456', 'Pictureland'),
+('Eco Fashionista', 'Ava Anderson', '567 Style Street', 'FashionCity', 'FC567', 'Trendland'),
+('Renewable Advocate', 'Michael Hernandez', '678 Wind Rd', 'PowerPlace', 'PP678', 'Energyland'),
+('Organic Chef', 'Sophie Moore', '789 Gourmet Gv', 'TasteTown', 'TT789', 'Foodland'),
+('Green Architect', 'Lucas Taylor', '890 Build Blvd', 'DesignCity', 'DC890', 'Constructland'),
+('Sustainable Student', 'Lily Wilson', '901 Study St', 'EducationTown', 'ET901', 'Learnland'),
+('Eco-friendly Artist', 'Ryan Martinez', '102 Art Ave', 'CreativeCity', 'CC102', 'Artland');
+
+
+-- Assuming Customer IDs from 3 to 12
+INSERT INTO Orders (CustomerID, OrderDate, ShipDate, ShipAddress, ShipCity, ShipPostalCode, ShipCountry) VALUES
+(3, '2023-12-01', '2023-12-05', '345 Wellness Way', 'HealthCity', 'HC345', 'Fitland'),
+(4, '2023-12-03', '2023-12-08', '456 Scenic St', 'ViewVille', 'VV456', 'Pictureland'),
+(5, '2023-12-05', '2023-12-10', '567 Style Street', 'FashionCity', 'FC567', 'Trendland'),
+(6, '2023-12-07', '2023-12-12', '678 Wind Rd', 'PowerPlace', 'PP678', 'Energyland'),
+(7, '2023-12-09', '2023-12-14', '789 Gourmet Gv', 'TasteTown', 'TT789', 'Foodland'),
+(8, '2023-12-11', '2023-12-16', '890 Build Blvd', 'DesignCity', 'DC890', 'Constructland'),
+(9, '2023-12-13', '2023-12-18', '901 Study St', 'EducationTown', 'ET901', 'Learnland'),
+(10, '2023-12-15', '2023-12-20', '102 Art Ave', 'CreativeCity', 'CC102', 'Artland'),
+(11, '2023-12-17', '2023-12-22', '123 Plant Road', 'FloraCity', 'FC123', 'Plantland'),
+(12, '2023-12-19', '2023-12-24', '234 Adventure Ave', 'TravelTown', 'TT234', 'Wanderland');
+
+
+-- Assuming Order IDs from 3 to 12 and random Product IDs
+INSERT INTO OrderDetails (OrderID, ProductID, Quantity, UnitPrice) VALUES
+(3, 4, 3, 4.99),
+(4, 5, 2, 9.99),
+(5, 6, 1, 19.99),
+(6, 7, 4, 1.99),
+(7, 8, 1, 29.99),
+(8, 9, 2, 24.99),
+(9, 10, 5, 6.99),
+(10, 2, 2, 10.50),
+(11, 1, 1, 12.99),
+(12, 3, 3, 3.50);
