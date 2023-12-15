@@ -1,0 +1,31 @@
+
+create procedure new_order(in p_CustomerID INT, in p_OrderDate DATE, in p_ShipDate DATE,
+in p_ShipAddress VARCHAR(255), in p_ShipCity VARCHAR(100), in p_ShipPostalCode VARCHAR(20), in p_ShipCountry VARCHAR(100),
+in p_ProductID INT, in p_Quantity INT, in p_UnitPrice DECIMAL(10, 2)
+)
+BEGIN
+    # Orders Insert
+    INSERT INTO Orders (CustomerID, OrderDate, ShipDate, ShipAddress, ShipCity, ShipPostalCode, ShipCountry) VALUES
+    (p_CustomerID, p_OrderDate, p_ShipDate, p_ShipAddress, p_ShipCity, p_ShipPostalCode, p_ShipCountry);
+
+    SET @lastId = LAST_INSERT_ID();
+
+    # OrderDetails Insert
+    INSERT INTO OrderDetails (OrderID, ProductID, Quantity, UnitPrice) VALUES
+    (LAST_INSERT_ID(), p_ProductID, p_Quantity, p_UnitPrice);
+end;
+
+CALL new_order(4, '2019-11-07', '2019-11-07', '534521 Brown St', 'Saccramento', 'SA321', 'USA', 8, 1, 4.99);
+
+-- Develop a stored procedure to update the stock quantity of a product after an order is placed.
+create procedure update_units_in_stock(
+in p_ProductID integer,
+in p_UnitsInStock integer
+)
+BEGIN
+    UPDATE Products
+    SET UnitsInStock = p_UnitsInStock
+    WHERE ProductID = p_ProductID;
+end;
+
+CALL update_units_in_stock(10, 20)
